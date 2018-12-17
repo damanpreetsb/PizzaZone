@@ -1,19 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         tools:context=".MainActivity">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headlineTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:text="BEST SELLERS"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="20dp"
+            android:layout_centerHorizontal="true"
+            app:fontFamily="@font/roboto_medium"/>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headlineTextView"
+            android:orientation="horizontal" >
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pizzaImageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="-100dp"
+                android:transitionName="pizza"
+                app:srcCompat="@drawable/ic_pizza"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pizzaNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cheese Garden"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/roboto_medium"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pizzaOrderedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ordered 91 times today"
+                    android:textColor="#d3c6c3c3"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="16dp"
+                    app:fontFamily="@font/roboto_medium"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/customiseButton"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customise"
+                    android:fontFamily="@font/roboto_medium"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:layout_marginTop="16dp"
+                    app:cornerRadius="30dp"
+                    app:backgroundTint="@color/colorAccent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

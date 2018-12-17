@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#070a2d</color>
+    <color name="colorPrimaryDark">#070a2d</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="buttonSelected">#081173</color>
+    <color name="buttonUnselected">#0d1250</color>
+
+    <color name="textColorSelected">#ffffff</color>
+    <color name="textColorUnselected">#b9e9f2dd</color>
 </resources>

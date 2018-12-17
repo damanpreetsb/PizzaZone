@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".CustomiseActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="bottom">
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/pizzaCheeseImageView"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                app:cornerRadius="20dp"
+                app:backgroundTint="#f7edc5"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pizzaCrustImageView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:transitionName="pizza"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#F1543F"/>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/cheeseSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:progressBackgroundTint="@color/colorAccent"
+            android:thumb="@drawable/ic_thumb"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cheese Normal"
+                android:textColor="#d3c6c3c3"
+                android:textSize="14sp"
+                app:fontFamily="@font/roboto_medium"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cheese Burst"
+                android:textColor="#d3c6c3c3"
+                android:textSize="14sp"
+                android:gravity="center"
+                app:fontFamily="@font/roboto_medium"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cheese Delux"
+                android:textColor="#d3c6c3c3"
+                android:textSize="14sp"
+                android:gravity="end"
+                app:fontFamily="@font/roboto_medium"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/normalCrustButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="Normal Crust"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="@color/textColorSelected"
+                app:backgroundTint="@color/buttonSelected"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/thinCrustButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="Thin Crust"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="@color/textColorUnselected"
+                app:backgroundTint="@color/buttonUnselected"/>
+
+    </LinearLayout>
+
+</LinearLayout>
