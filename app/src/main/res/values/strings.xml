@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">PizzaZone</string>
+    <string name="ordered_91_times_today">Ordered 91 times today</string>
+    <string name="customise">Customise</string>
+    <string name="best_sellers">BEST SELLERS</string>
+    <string name="cheese_garden">Cheese Garden</string>
+    <string name="cheese_normal">Cheese Normal</string>
+    <string name="cheese_burst">Cheese Burst</string>
+    <string name="cheese_delux">Cheese Delux</string>
+    <string name="normal_crust">Normal Crust</string>
+    <string name="thin_crust">Thin Crust</string>
+    <string name="add_toppings">Add Toppings</string>
+    <string name="pepperoni">PEPPERONI</string>
+    <string name="_1_item">1 ITEM</string>
+    <string name="order">ORDER</string>
 </resources>

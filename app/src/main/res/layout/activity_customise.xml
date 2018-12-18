@@ -1,123 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp"
-        tools:context=".CustomiseActivity">
+        android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="vertical"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="bottom">
+            android:layout_height="match_parent"
+            android:layout_above="@id/orderLayout"
+            android:background="@color/colorPrimary">
 
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/pizzaCheeseImageView"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        <LinearLayout
+                android:id="@+id/pizzaLayout"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:insetBottom="0dp"
-                android:insetTop="0dp"
-                android:insetLeft="0dp"
-                android:insetRight="0dp"
-                app:cornerRadius="20dp"
-                app:backgroundTint="#f7edc5"/>
-
-    </LinearLayout>
-
-    <com.google.android.material.card.MaterialCardView
-            android:id="@+id/pizzaCrustImageView"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:transitionName="pizza"
-            app:cardCornerRadius="10dp"
-            app:cardBackgroundColor="#F1543F"/>
-
-    <androidx.appcompat.widget.AppCompatSeekBar
-            android:id="@+id/cheeseSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:progressBackgroundTint="@color/colorAccent"
-            android:thumb="@drawable/ic_thumb"/>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cheese Normal"
-                android:textColor="#d3c6c3c3"
-                android:textSize="14sp"
-                app:fontFamily="@font/roboto_medium"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cheese Burst"
-                android:textColor="#d3c6c3c3"
-                android:textSize="14sp"
                 android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/pizzaImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        android:transitionName="customisedPizza"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:srcCompat="@drawable/ic_pizza"/>
+
+                <LinearLayout
+                        android:id="@+id/toppingsLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/pizzaCheeseImageView">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/firstToppingImageView"
+                            android:layout_width="30dp"
+                            android:layout_height="6dp"
+                            android:scaleType="fitXY"
+                            android:layout_marginEnd="80dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_pepperoni"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/secondToppingImageView"
+                            android:layout_width="30dp"
+                            android:layout_height="6dp"
+                            android:scaleType="fitXY"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_pepperoni"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/thirdToppingImageView"
+                            android:layout_width="30dp"
+                            android:layout_height="6dp"
+                            android:layout_marginStart="80dp"
+                            android:scaleType="fitXY"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_pepperoni"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/pizzaCheeseImageView"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:insetBottom="-10dp"
+                        android:insetTop="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:clickable="false"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintBottom_toTopOf="@id/pizzaCrustImageView"
+                        app:cornerRadius="20dp"
+                        app:backgroundTint="#f7edc5"/>
+
+                <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/pizzaCrustImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:transitionName="pizza"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:cardCornerRadius="10dp"
+                        app:cardBackgroundColor="@color/crust"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pizzaNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cheese_garden"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    app:fontFamily="@font/roboto_medium"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/cheeseSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:progressBackgroundTint="@color/colorAccent"
+                    android:thumb="@drawable/ic_thumb"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cheese_normal"
+                        android:textColor="@color/textColorUnselected"
+                        android:textSize="14sp"
+                        app:fontFamily="@font/roboto_medium"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cheese_burst"
+                        android:textColor="@color/textColorUnselected"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        app:fontFamily="@font/roboto_medium"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cheese_delux"
+                        android:textColor="@color/textColorUnselected"
+                        android:textSize="14sp"
+                        android:gravity="end"
+                        app:fontFamily="@font/roboto_medium"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/normalCrustButton"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/normal_crust"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorSelected"
+                        app:backgroundTint="@color/buttonSelected"/>
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/thinCrustButton"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/thin_crust"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorUnselected"
+                        app:backgroundTint="@color/buttonUnselected"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_toppings"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:layout_marginTop="20dp"
+                    app:fontFamily="@font/roboto_medium"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/pepperoniCardView"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/buttonUnselected">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginTop="10dp"
+                                app:srcCompat="@drawable/ic_pepperoni"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/pepperoniTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pepperoni"
+                                android:textColor="@color/textColorUnselected"
+                                android:textSize="14sp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="10dp"
+                                app:fontFamily="@font/roboto_medium"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+            android:id="@+id/orderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:background="@color/colorAccent"
+            android:padding="12dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1_item"
+                android:textColor="@color/textColorSelected"
+                android:textSize="16sp"
                 app:fontFamily="@font/roboto_medium"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cheese Delux"
-                android:textColor="#d3c6c3c3"
-                android:textSize="14sp"
-                android:gravity="end"
+                android:text="@string/order"
+                android:textColor="@color/textColorSelected"
+                android:textSize="16sp"
+                android:layout_alignParentEnd="true"
                 app:fontFamily="@font/roboto_medium"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/normalCrustButton"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp"
-                android:text="Normal Crust"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                android:textColor="@color/textColorSelected"
-                app:backgroundTint="@color/buttonSelected"/>
-
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/thinCrustButton"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginStart="4dp"
-                android:text="Thin Crust"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                android:textColor="@color/textColorUnselected"
-                app:backgroundTint="@color/buttonUnselected"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

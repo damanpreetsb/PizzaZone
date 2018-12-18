@@ -4,9 +4,10 @@
     <color name="colorPrimaryDark">#070a2d</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="buttonSelected">#081173</color>
-    <color name="buttonUnselected">#0d1250</color>
+    <color name="buttonSelected">#050c59</color>
+    <color name="buttonUnselected">#0b0f3e</color>
 
     <color name="textColorSelected">#ffffff</color>
     <color name="textColorUnselected">#b9e9f2dd</color>
+    <color name="crust">#F1543F</color>
 </resources>
